@@ -12,3 +12,5 @@ cap:dict[str,any]={
 }
 url = 'http://127.0.0.1:4723/wd/hub'
 
+# driver = webdriver.Remote(url,options=AppiumOptions().load_capabilities(cap))
+# time.sleep(3)
