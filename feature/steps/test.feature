@@ -1,14 +1,22 @@
 Feature: google task
 
     Scenario: open the Google task application
-        Given open application
+        Given veryfy_next batton
+        When click on npr_allow_button
+        And click on permission_deny_button
+
+
 
     Scenario: Create a New Task
-        When cerate tasks
-        And add details on task
-        And add date/time on task
-        And save the task
-        
+        When I Create new task
+        When I Create new task tittle
+        When I click details on task
+        And I click add_task_details on task
+        And I add date/time on task
+        And I add dtp_time_label
+        And I add material_timepicker_ok_button
+        And I save the task
+
     Scenario: View Task List
         When Log in with valid credentials if not already logged in
 
@@ -30,6 +38,7 @@ Feature: google task
     Scenario: UnMark Task as Complete and mark with chackmarks
         When I click view complate task
         And I click unmark complate task
+    
 
     Scenario:  Sort Tasks
          When Log in with valid credentials if not already logged in
