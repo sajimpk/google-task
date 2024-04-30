@@ -50,8 +50,14 @@ Feature: google task
          Then I select more options
          When I select rename option
          And I enter tittle
-         
+
     Scenario:  Delete list
          When I select the list for delete
          Then I select more options
          When I select delete option
+    
+    Scenario:  Delete Completed task
+        When I click view complate task
+        Then I select more options
+        And I click on Delete all complated tasks
+        And I click on Delete

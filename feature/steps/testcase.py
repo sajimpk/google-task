@@ -161,3 +161,13 @@ def rename1_list(context):
 def delete_list(context):
     driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_list_option_title"]').click()
     time.sleep(3)
+
+
+@Then(U'I click on Delete all complated tasks')
+def delete_list(context):
+    driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_all_completed_tasks_option"]').click()
+    time.sleep(3)
+@Then(U'I click on Delete')
+def delete_list(context):
+    driver.find_element(By.XPATH,'//android.widget.Button[@resource-id="android:id/button1"]').click()
+    time.sleep(3)
