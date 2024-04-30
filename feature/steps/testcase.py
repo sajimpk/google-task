@@ -104,7 +104,23 @@ def view_complate(context):
 @when(U'I click unmark complate task')
 def unmark_complate(context):
     driver.find_element(By.XPATH,'//android.view.View[@content-desc="Mark as not complete"]').click()
+    time.sleep(5)
+
+@when(U'I select delete option')
+def delete_list_opt(context):
+    driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_list_option_title"]').click()
     time.sleep(3)
+
+
+@Then(U'I click on Delete all complated tasks')
+def delete_com_task(context):
+    driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_all_completed_tasks_option"]').click()
+    time.sleep(3)
+@Then(U'I click on Delete')
+def delete_conf_task(context):
+    driver.find_element(By.XPATH,'//android.widget.Button[@resource-id="android:id/button1"]').click()
+    time.sleep(3)
+
 
 #sinario 7 #################################
 @when(U'I find the sort options')
@@ -157,17 +173,3 @@ def rename1_list(context):
     driver.find_element(By.XPATH,'//android.widget.TextView[@text="list_edited"]').click()
     time.sleep(3)
 
-@when(U'I select delete option')
-def delete_list(context):
-    driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_list_option_title"]').click()
-    time.sleep(3)
-
-
-@Then(U'I click on Delete all complated tasks')
-def delete_list(context):
-    driver.find_element(By.XPATH,'//android.widget.TextView[@resource-id="com.google.android.apps.tasks:id/delete_all_completed_tasks_option"]').click()
-    time.sleep(3)
-@Then(U'I click on Delete')
-def delete_list(context):
-    driver.find_element(By.XPATH,'//android.widget.Button[@resource-id="android:id/button1"]').click()
-    time.sleep(3)

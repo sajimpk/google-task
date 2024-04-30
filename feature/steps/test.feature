@@ -17,22 +17,17 @@ Feature: google task
         When Edit the task Tittel
         When goto back
 
-    Scenario: DELETE Task
-        When Select the task
-        And Go to more options
-        And Click on delete
-
-    Scenario:  Add Subtasks to Task
+    Scenario: Add Subtasks to Task
         When Select the task
         And I add subtasks to a task
         And I add subtasks tittel task
         And goto back
 
-    Scenario:  Mark Task as Complete task
+    Scenario: Mark Task as Complete task
         When Select the task
         And I click mark complate
 
-    Scenario:  UnMark Task as Complete
+    Scenario: UnMark Task as Complete and mark with chackmarks
         When I click view complate task
         And I click unmark complate task
 
@@ -40,6 +35,17 @@ Feature: google task
          When Log in with valid credentials if not already logged in
          And I find the sort options
          And I click on Date options
+
+    Scenario:  Delete Completed task
+        When I click view complate task
+        Then I select more options
+        And I click on Delete all complated tasks
+        And I click on Delete
+
+    Scenario: DELETE Task all task
+        When Select the task
+        And Go to more options
+        And Click on delete
 
     Scenario:  New list
          When I FOUND the NEW LIST options
@@ -55,9 +61,3 @@ Feature: google task
          When I select the list for delete
          Then I select more options
          When I select delete option
-    
-    Scenario:  Delete Completed task
-        When I click view complate task
-        Then I select more options
-        And I click on Delete all complated tasks
-        And I click on Delete
